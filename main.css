@@ -1993,7 +1993,13 @@ a {
     border-color: #e7ffff !important
 }
 
-.collapsible {
+.collapsible{
+    border: 2px solid grey;
+    border-radius:5px;
+    margin-bottom: 10px;
+}
+
+.collapsibleButton{
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -2003,8 +2009,7 @@ a {
     border:none;
 }
 
-.collapsible:hover
-:not(.active)
+.collapsible > :hover
 {
     height: 110%;
 }
