@@ -1993,24 +1993,23 @@ a {
     border-color: #e7ffff !important
 }
 
-.collapsible{
+.collapsible {
     border: 2px solid grey;
-    border-radius:5px;
+    border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.collapsibleButton{
+.collapsibleButton {
     cursor: pointer;
     padding: 18px;
     width: 100%;
     text-align: left;
     outline: none;
 
-    border:none;
+    border: none;
 }
 
-.collapsible > :hover
-{
+.collapsible> :hover {
     height: 110%;
 }
 
@@ -2019,4 +2018,78 @@ a {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
+}
+
+.dynamicvisibility {
+    transform: scaley(0.99);
+    transition: transform 0.6s ease-in-out;
+}
+
+.dynamicvisibility.simplefade{
+    transform: translate(0, 5vh);
+    opacity:0;
+    transition: all 0.8s;
+}
+
+.dynamicvisibility.simplefade.visible{
+    transform: translate(0, 0);
+    opacity:1;
+}
+
+.dynamicvisibility.widthfade{
+    width: 0%;
+    height: 100%;
+    transition: width 1.1s;
+}
+
+.dynamicvisibility.widthfade.visible{
+    width: 100%;
+}
+
+.dynamicvisibility.visible {
+    transform: scaley(1);
+}
+
+.dynamicvisibility.flashbar::before {
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    inset: 0 0 0 0;
+    background: white;
+}
+
+.dynamicvisibility.flashbar.blackbar::before {
+    background: black;
+}
+
+.dynamicvisibility.flashbar.visible::before {
+    animation-name: bgEntry;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+}
+
+@keyframes bgEntry {
+    0% {
+        transform-origin: bottom left;
+    }
+
+    30% {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    30.1% {
+        transform-origin: bottom right;
+    }
+
+    70% {
+        transform: scaleX(0);
+        transform-origin: bottom right;
+    }
 }
