@@ -12,6 +12,8 @@ for (i = 0; i < coll.length; i++) {
     } else {
       content.style.maxHeight = content.scrollHeight + "px";
     }
+
+    setTimeout(UpdateDynamicVisObjs, 500);
   });
 }
 
