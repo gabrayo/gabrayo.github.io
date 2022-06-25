@@ -2059,6 +2059,7 @@ a {
 
 .toggleable.flipbox.active {
     transform: rotateY(180deg);
+    opacity: 0.97;
 }
 
 .toggleable.flipbox>span {
@@ -2110,19 +2111,10 @@ a {
     width: 100%;
 }
 
-.dynamicvisibility.visible {
-    transform: scaley(1);
-}
-
 .dynamicvisibility.flashbar::before {
     content: " ";
     display: block;
     position: relative;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    inset: 0 0 0 0;
     background: none;
     border: 2px solid white;
     border-width: 2px 0 2px 0;
