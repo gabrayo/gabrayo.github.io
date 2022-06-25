@@ -60,18 +60,18 @@ function SearchQuals() {
 UpdateDynamicVisObjs();
 
 function UpdateDynamicVisObjs() {
-  var windowheight = $(window).height();
+  let windowheight = $(window).height();
 
-  var pageTop = $(document).scrollTop();
-  var pageBottom = pageTop + windowheight;
-  var tags = $(".dynamicvisibility");
+  let pageTop = $(document).scrollTop();
+  let pageBottom = pageTop + windowheight;
+  let tags = $(".dynamicvisibility");
 
   for (var i = 0; i < tags.length; i++) {
     var tag = tags[i];
     var posTop = $(tag).position().top;
     var height = $(tag).height();
 
-    if (pageTop < posTop + height && posTop < pageBottom) {
+    if (pageTop + (windowheight/20) < posTop + height && posTop < pageBottom) {
       $(tag).addClass("visible");
     } else {
       $(tag).removeClass("visible");
