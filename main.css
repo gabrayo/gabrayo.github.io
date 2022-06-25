@@ -2058,7 +2058,7 @@ a {
 }
 
 .toggleable.flipbox.active {
-    transform: rotateY(180deg);
+    transform: rotateY(179deg);
     opacity: 0.97;
 }
 
@@ -2076,10 +2076,10 @@ a {
     margin: auto;
 
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    top: -1px;
+    right: -1px;
+    bottom: -1px;
+    left: -1px;
 
     opacity: 0;
     transition: opacity 0.2s;
