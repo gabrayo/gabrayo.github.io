@@ -2089,11 +2089,6 @@ a {
 }
 
 /* Dynamic Visibility Styles */
-.dynamicvisibility {
-    transform: scaley(0.99);
-    transition: transform 0.6s ease-in-out;
-}
-
 .dynamicvisibility.simplefade {
     transform: translate(0, 5vh);
     opacity: 0;
