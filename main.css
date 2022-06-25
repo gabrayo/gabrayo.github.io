@@ -2069,6 +2069,8 @@ a {
     padding: 0 5% 0 5%;
 
     transform: rotateY(180deg);
+    z-index: 999;
+
     background: rgba(0, 0, 0, 0.8);
     margin: auto;
 
@@ -2118,8 +2120,6 @@ a {
 }
 
 .dynamicvisibility.flashbar::before {
-    transform: scaleX(0);
-    transform-origin: bottom left;
     content: " ";
     display: block;
     position: absolute;
@@ -2131,6 +2131,11 @@ a {
     background: none;
     border: 2px solid white;
     border-width: 2px 0 2px 0;
+
+    transform: scaleX(1);
+    transform-origin: bottom left;
+
+    transition: transform 1s;
 }
 
 .dynamicvisibility.flashbar.blackbar::before {
@@ -2138,29 +2143,8 @@ a {
 }
 
 .dynamicvisibility.flashbar.visible::before {
-    animation-name: bgEntry;
-    animation-duration: 1s;
-    animation-iteration-count: 1;
-}
-
-@keyframes bgEntry {
-    0% {
-        transform-origin: bottom left;
-    }
-
-    30% {
-        transform: scaleX(1);
-        transform-origin: bottom left;
-    }
-
-    30.1% {
-        transform-origin: bottom right;
-    }
-
-    70% {
-        transform: scaleX(0);
-        transform-origin: bottom right;
-    }
+    transform: scaleX(0);
+    transform-origin: bottom right;
 }
 
 /* Qualification List */
@@ -2173,57 +2157,66 @@ a {
 }
 
 /* circle percentage styles */
-@property --p{
+@property --p {
     syntax: '<number>';
     inherits: true;
     initial-value: 1;
-  }
-  
-  .pie {
-    --p:20;      /* the percentage */
-    --b:22px;    /* the thickness */
-    --c:darkred; /* the color */
-    --w:150px;   /* the size*/
-    
-    width:var(--w);
-    min-width:var(--w);
-    max-width:var(--w);
-    aspect-ratio:1/1;
-    position:relative;
-    display:inline-grid;
-    margin:5px;
-    place-content:center;
-  }
-  
-  .pie:before,
-  .pie:after {
-    content:"";
-    position:absolute;
-    border-radius:50%;
-  }
-  .pie:before {
-    inset:0;
-    background:
-      radial-gradient(farthest-side,var(--c) 98%,#0000) top/var(--b) var(--b) no-repeat,
-      conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
-    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-            mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
-  }
-  .pie:after {
-    inset:calc(50% - var(--b)/2);
-    background:var(--c);
-    transform:rotate(calc(var(--p)*3.6deg - 90deg)) translate(calc(var(--w)/2 - 50%));
-  }
-  .no-round:before {
-    background-size:0 0,auto;
-  }
-  .no-round:after {
-    content:none;
-  }
+}
 
-  .dynamicvisibility.visible.pie {
-    animation:p 1s both;
-  }
-  @keyframes p{
-    from{--p:0;}
-  }
+.pie {
+    --p: 20;
+    /* the percentage */
+    --b: 22px;
+    /* the thickness */
+    --c: darkred;
+    /* the color */
+    --w: 150px;
+    /* the size*/
+
+    width: var(--w);
+    min-width: var(--w);
+    max-width: var(--w);
+    aspect-ratio: 1/1;
+    position: relative;
+    display: inline-grid;
+    margin: 5px;
+    place-content: center;
+}
+
+.pie:before,
+.pie:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.pie:before {
+    inset: 0;
+    background:
+        radial-gradient(farthest-side, var(--c) 98%, #0000) top/var(--b) var(--b) no-repeat,
+        conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+}
+
+.pie:after {
+    inset: calc(50% - var(--b)/2);
+    background: var(--c);
+    transform: rotate(calc(var(--p)*3.6deg - 90deg)) translate(calc(var(--w)/2 - 50%));
+}
+
+.no-round:before {
+    background-size: 0 0, auto;
+}
+
+.no-round:after {
+    content: none;
+}
+
+.dynamicvisibility.pie:not(.visible) {
+    --p: 0 !important;
+}
+
+.dynamicvisibility.pie {
+    transition: --p 1s;
+}
