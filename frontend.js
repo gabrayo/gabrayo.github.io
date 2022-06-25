@@ -15,6 +15,47 @@ for (i = 0; i < coll.length; i++) {
   });
 }
 
+//Flippable Objects Setup
+var coll = document.getElementsByClassName("toggleable");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+}
+//qual list Setup
+var quallist = document.getElementById("qualList");
+
+for (i = 0; i < quallist.children.length; i++) {
+  var child = quallist.children[i];
+  var qualified = false;
+  if (child.innerHTML[0] == '+') {
+    child.innerHTML = child.innerHTML.substring(1);
+    qualified = true;
+  }
+
+  if (qualified)
+    child.innerHTML = '<i class="fa fa-plus-square"></i>' + child.innerHTML;
+  else
+    child.innerHTML = '<i class="fa fa-minus-square-o"></i>' + child.innerHTML;
+}
+
+var input = document.getElementById('qualSearch');
+input.addEventListener('input', SearchQuals);
+function SearchQuals() {
+  var searchstring = input.value;
+
+  for (i = 0; i < quallist.children.length; i++) {
+    var child = quallist.children[i];
+    if (searchstring == "" || child.innerHTML.toLowerCase().includes(searchstring.toLowerCase())) {
+      child.style.display = "block";
+    } else {
+      child.style.display = "none";
+    }
+  }
+}
+
 //Scroll Visibility
 UpdateDynamicVisObjs();
 
@@ -40,5 +81,5 @@ function UpdateDynamicVisObjs() {
   }
 }
 
-$(document).on("scroll", function () {UpdateDynamicVisObjs();});
+$(document).on("scroll", function () { UpdateDynamicVisObjs(); });
 
