@@ -2063,7 +2063,7 @@ a {
 }
 
 .toggleable.flipbox>span {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -2087,6 +2087,7 @@ a {
 
 .toggleable.flipbox.active>span {
     opacity: 0.98;
+    display: flex;
 }
 
 /* Dynamic Visibility Styles */
