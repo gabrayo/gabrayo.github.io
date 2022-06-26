@@ -40,9 +40,9 @@ for (i = 0; i < quallist.children.length; i++) {
   }
 
   if (qualified)
-    child.innerHTML = '<i class="fa fa-plus-square"></i>' + child.innerHTML;
+    child.innerHTML = '<i class="fa fa-check"></i>' + child.innerHTML;
   else
-    child.innerHTML = '<i class="fa fa-minus-square-o"></i>' + child.innerHTML;
+    child.innerHTML = '<i class="fa fa-times"></i>' + child.innerHTML;
 }
 
 var input = document.getElementById('qualSearch');
