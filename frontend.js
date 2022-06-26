@@ -98,8 +98,6 @@ function UpdateDynamicVisObjs() {
     } else {
       $(tag).removeClass("visible");
     }
-
-    console.log(pageTop + "<" + (posTop + height) + "||" + posTop + "<" + pageBottom)
   }
 }
 
