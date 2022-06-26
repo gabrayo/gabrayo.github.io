@@ -31,6 +31,8 @@ var quallist = document.getElementById("qualList");
 
 for (i = 0; i < quallist.children.length; i++) {
   var child = quallist.children[i];
+  $(child).addClass("active");
+
   var qualified = false;
   if (child.innerHTML[0] == '+') {
     child.innerHTML = child.innerHTML.substring(1);
@@ -51,9 +53,9 @@ function SearchQuals() {
   for (i = 0; i < quallist.children.length; i++) {
     var child = quallist.children[i];
     if (searchstring == "" || child.innerHTML.toLowerCase().includes(searchstring.toLowerCase())) {
-      child.style.display = "block";
+      $(child).addClass("active");
     } else {
-      child.style.display = "none";
+      $(child).removeClass("active");
     }
   }
 }
