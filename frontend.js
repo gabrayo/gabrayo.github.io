@@ -13,7 +13,7 @@ for (i = 0; i < coll.length; i++) {
       content.style.maxHeight = content.scrollHeight + "px";
     }
 
-    setTimeout(UpdateDynamicVisObjs, 500);
+    setTimeout(UpdateDynamicVisObjs, 150);
   });
 }
 
@@ -48,14 +48,32 @@ for (i = 0; i < quallist.children.length; i++) {
 var input = document.getElementById('qualSearch');
 input.addEventListener('input', SearchQuals);
 function SearchQuals() {
-  var searchstring = input.value;
+  var searchstring = input.value.toLowerCase();
 
   for (i = 0; i < quallist.children.length; i++) {
-    var child = quallist.children[i];
-    if (searchstring == "" || child.innerHTML.toLowerCase().includes(searchstring.toLowerCase())) {
-      $(child).addClass("active");
+    var child = quallist.children[i].children[1];
+    child.innerHTML = child.innerHTML.replace(/<span class="w3-text-white">/g, "").replace(/<\/span>/g, "");
+    var rawtext = child.innerHTML;
+
+    if (searchstring == "" || rawtext.toLowerCase().includes(searchstring)) {
+      $(quallist.children[i]).addClass("active");
+
+      if (searchstring != "") {
+        splittext = rawtext.toLowerCase().split(searchstring)
+
+        var lengthbefore = 0;
+        var resultanttext = "";
+        for (o = 0; o < splittext.length; o++) {
+          resultanttext += rawtext.substring(lengthbefore, lengthbefore + splittext[o].length);
+          lengthbefore += splittext[o].length;
+
+          resultanttext += '<span class="w3-text-white">' + rawtext.substring(lengthbefore, lengthbefore + searchstring.length) + '</span>';
+          lengthbefore += searchstring.length;
+        }
+        child.innerHTML = resultanttext;
+      }
     } else {
-      $(child).removeClass("active");
+      $(quallist.children[i]).removeClass("active");
     }
   }
 }
@@ -75,7 +93,7 @@ function UpdateDynamicVisObjs() {
     var posTop = $(tag).position().top;
     var height = $(tag).height();
 
-    if (pageTop + (windowheight/20) < posTop + height && posTop < pageBottom) {
+    if (pageTop + (windowheight / 20) < posTop + height && posTop < pageBottom) {
       $(tag).addClass("visible");
     } else {
       $(tag).removeClass("visible");

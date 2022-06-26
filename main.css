@@ -2017,7 +2017,7 @@ a {
 /* START OF CUSTOM CLASSES */
 
 /* Collapsible Styles */
-/* note: class '.active' is the onclick-toggle class */
+/* note: class '.active' is the universal toggler class */
 .collapsible {
     border: 2px solid grey;
     border-radius: 5px;
