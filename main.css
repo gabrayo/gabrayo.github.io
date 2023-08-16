@@ -2015,28 +2015,27 @@ a {
 }
 
 /* START OF CUSTOM CLASSES */
-
-/* Collapsible Styles */
-/* note: class '.active' is the universal toggler class */
-.collapsible {
+.w3-sectionButton{
     border: 2px solid grey;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
+.w3-sectionButton > button{
+    width: 100%;
+}
+
+/* Collapsible Styles */
+/* note: class '.active' is the universal toggler class */
+
 .collapsibleButton {
     cursor: pointer;
     padding: 18px;
-    width: 100%;
     text-align: left;
     outline: none;
-
     border: none;
 }
 
-.collapsible> :hover {
-    height: 110%;
-}
 
 .content {
     padding: 0 18px;

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Gabriel Paulo Rayo</title>
+    <title>Gab Rayo, Home</title>
     <meta name="description" content="Homepage of Gabriel Paulo Rayo's site.">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,39 +10,10 @@
     <link rel="stylesheet" href="main.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            font-family: "Montserrat", sans-serif
-        }
+    <link rel="stylesheet" href="page.css">
 
-        .w3-row-padding img {
-            margin-bottom: 12px
-        }
-
-        /* Set the width of the sidebar to 120px */
-        .w3-sidebar {
-            width: 120px;
-            background: #222;
-        }
-
-        /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-        #main {
-            margin-left: 120px
-        }
-
-        /* Remove margins from "page content" on small screens */
-        @media only screen and (max-width: 600px) {
-            #main {
-                margin-left: 0
-            }
-        }
-    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="frontend.js"></script>
 </head>
 
 <body class="w3-black">
@@ -59,369 +30,25 @@
                 style="width:20%; min-width:200px;">
         </header>
 
-        <!-- Summary Section -->
-        <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-            <h2 class="w3-text-light-grey dynamicvisibility simplefade">Summary</h2>
+        <!-- About Section -->
+        <div class="w3-content w3-justify w3-text-grey" id="about">
+            <h2 class="w3-text-light-grey dynamicvisibility simplefade">About</h2>
             <hr style="width:200px" class="w3-opacity">
-            <p class="">I started my programming endeavor when I was 12 years old. I went from front-end web
-                development,
-                to robotics programming, and eventually into game development. Now, I have spoken at school seminars,
-                started multiple projects, and learned new concepts after every project I delve into.
-                My main proficiencies revolve around game development, front-end web development,
-                and language acquisition.
+            <p class="">
+                Read about my skills, experience, and notable achievements and involvements.
             </p>
-            <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-            <p class="w3-wide">Game development</p>
-            <div class="w3-white">
-                <div style="height:28px;width:95%">
-                    <div class="w3-dark-grey dynamicvisibility widthfade"></div>
-                </div>
-            </div>
-            <p class="w3-wide">Front-end Web Development</p>
-            <div class="w3-white">
-                <div style="height:28px;width:60%">
-                    <div class="w3-dark-grey dynamicvisibility widthfade"></div>
-                </div>
-            </div>
-            <p class="w3-wide">Graphic Design</p>
-            <div class="w3-white">
-                <div style="height:28px;width:70%">
-                    <div class="w3-dark-grey dynamicvisibility widthfade"></div>
-                </div>
-            </div>
-            <p class="w3-wide">Music Production</p>
-            <div class="w3-white">
-                <div style="height:28px;width:90%">
-                    <div class="w3-dark-grey dynamicvisibility widthfade"></div>
-                </div>
-            </div>
-            <p class="w3-wide">Sound Design</p>
-            <div class="w3-white">
-                <div style="height:28px;width:75%">
-                    <div class="w3-dark-grey dynamicvisibility widthfade"></div>
-                </div>
-            </div>
-            <p class="w3-wide">Video Production</p>
-            <div class="w3-white">
-                <div style="height:28px;width:87%">
-                    <div class="w3-dark-grey dynamicvisibility widthfade"></div>
-                </div>
-            </div>
-            <br>
-
-            <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-                <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">6+</span><br>
-                    Years of Skill Development
-                </div>
-                <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">1+</span><br>
-                    Academic Papers Published
-                </div>
-                <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">1+</span><br>
-                    Years of ComSci Org Presidency
-                </div>
-                <div class="w3-quarter w3-section">
-                    <span class="w3-xlarge">5000+</span><br>
-                    Hours of Game Development
-                </div>
-            </div>
-
-            <a href="/files/CV_Gabriel Paulo A. Rayo.pdf" download><button class="w3-button w3-light-grey w3-padding-large w3-section">
-                <i class="fa fa-download"></i>  Download CV 
-            </button></a>
-            <br>
-
-            <!-- Language Proficiencies -->
-            <h3 class="w3-padding-16 w3-text-light-grey">Language Proficiencies</h3>
-            <p>Current proficiencies according to self assessment. From limited experience, I have realized that my
-                high-proficiency in C# easily translates to the learning of other languages, given adequate research.
-            </p>
-            <div class="w3-row w3-center w3-padding-16 w3-section w3-text-white" style="display: flex; align-items: center;
-            justify-content: center; flex-wrap: wrap;">
-                <div class="w3-quarter w3-section pie dynamicvisibility" style="--p:99;--c:white;--b:15px"> C#
-                </div>
-                <div class="w3-quarter w3-section pie dynamicvisibility" style="--p:60;--c:white;--b:15px"> Javascript
-                </div>
-                <div class="w3-quarter w3-section pie dynamicvisibility" style="--p:42;--c:white;--b:15px"> Python
-                </div>
-                <div class="w3-quarter w3-section pie dynamicvisibility" style="--p:65;--c:white;--b:15px"> C++
-                </div>
-            </div>
-
-            <!-- Notable Achievements -->
-            <div id="achievements">
-                <h3 class="w3-padding-16 w3-text-light-grey">Notable Involvements</h3>
-                <div class="collapsible">
-                    <button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">Game
-                        Development</button>
-                    <div class="content">
-                        <hr style="width:200px" class="w3-opacity">
-                        
-                        <div>
-                            <img src="images/exp_cssClub.jpg" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                                style="width:80px">
-                            <div style="margin-left:100px">
-                                <p><span class="w3-large w3-margin-right w3-text-white">DLSU Organization
-                                        President</span>at
-                                    CCP
-                                </p>
-                                <p>A.Y. 2021-2022 president at Competetive Computer Programmers (CCP). I delivered 2
-                                    seminars
-                                    here about game development.</p><br>
-                            </div>
-                        </div>
-                        <div>
-                            <img src="images/exp_projExp.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                                style="width:80px">
-                            <div style="margin-left:100px">
-                                <p><span class="w3-large w3-margin-right w3-text-white">4+ years Project
-                                        Experience</span>
-                                    Self-taught
-                                </p>
-                                <p>10 major projects within 4+ years with 3 active. With some projects delving into
-                                    specific
-                                    areas of game development including:
-                                    Steam multiplayer, Serialization, and Advanced code architecture. Project updates
-                                    can be
-                                    found in my <a class="w3-text-white" href="https://twitter.com/exhorizons"> game
-                                        developer twitter account</a>.</p><br>
-                            </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible">
-                <button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">Work Experience</button>
-                <div class="content">
-                    <hr style="width:200px" class="w3-opacity">
-                    <div>
-                        <img src="images/exp_lscs.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                            style="width:80px">
-                        <div style="margin-left:100px">
-                            <p><span class="w3-large w3-margin-right w3-text-white">DLSU Academics Officer</span>at LSCS
-                            </p>
-                            <p>Regularly holding programming tutoring sessions at La Salle Computer Society and holding academic seminars regarding programming.</p><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible">
-                <button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">Publications</button>
-                <div class="content">
-                    <hr style="width:200px" class="w3-opacity">
-                    <div>
-                        <img src="images/exp_paper.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                            style="width:80px">
-                        <div style="margin-left:100px">
-                            <p><span class="w3-large w3-margin-right w3-text-white">Academic Research Paper</span>
-                                at DLSU
-                            </p>
-                            <p>A Preliminary Study on Teaching Programming Through Physics: Development of a C# Code Library on Classical Mechanics
-                                <br>L Gulinao, E Marmol, G Rayo, A Tiu, S Chu
-                                <br>Manila Journal of Science 15 (2), 34-45
-                                <br>
-                                <br> The library can be found 
-                                <a class="w3-text-white"
-                                    href="https://github.com/Cybalt-SR/SpaceSimulator">here</a>
-                                    , while the paper can be found
-                                    <a class="w3-text-white"
-                                    href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XmADm7UAAAAJ&citation_for_view=XmADm7UAAAAJ:u-x6o8ySG0sC">here</a>
-                            </p><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible">
-                <button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">Front-end Web
-                    Development</button>
-                <div class="content">
-                    <hr style="width:200px" class="w3-opacity">
-                    <div>
-                        <img src="images/exp_website.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                            style="width:80px">
-                        <div style="margin-left:100px">
-                            <p><span class="w3-large w3-margin-right w3-text-white">Site Creation</span> commissioned
-                            </p>
-                            <p>Actively developing sites such as
-                                <a class="w3-text-white" href="https://github.com/gabrayo/gabrayo.github.io">this</a>
-                                portfolio site.
-                            </p><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="collapsible">
-                <button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">Music
-                    Production</button>
-                <div class="content">
-                    <hr style="width:200px" class="w3-opacity">
-                    <div>
-                        <img src="images/exp_piano.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                            style="width:80px">
-                        <div style="margin-left:100px">
-                            <p><span class="w3-large w3-margin-right w3-text-white">Classically Trained</span> at GSMS
-                            </p>
-                            <p>Won 5 "best of the year" trophies in a row in my 7 years of training at the Guy Simondac Music Studio (GSMS).</p><br>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="images/exp_musicprod.png" alt="Avatar" class="w3-left w3-circle w3-margin-right"
-                            style="width:80px">
-                        <div style="margin-left:100px">
-                            <p><span class="w3-large w3-margin-right w3-text-white">Multi-genre Experience</span>
-                                Self-taught
-                            </p>
-                            <p>Delved into producing multiple genres of music. My productions can be seen in
-                                <a class="w3-text-white"
-                                    href="https://www.youtube.com/channel/UCLB9mcl3Z1OuJyk_SNtiFxw">my youtube
-                                    channel.</a>
-                            </p><br>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a href="about.html" class="w3-sectionButton w3-button w3-black w3-wide">ABOUT</a>
             <!-- End About Section -->
         </div>
-
-        <!-- Project Previews -->
-        <div class="w3-padding-64 w3-content w3-text-grey" id="photos">
-            <h2 class="w3-text-light-grey dynamicvisibility simplefade">Project Photos</h2>
+        <!-- Blog Section -->
+        <div class="w3-content w3-text-grey">
+            <h2 class="w3-text-light-grey dynamicvisibility simplefade">Blog</h2>
             <hr style="width:200px" class="w3-opacity">
-
-            <p> Snippets of progress videos taken from my <a class="w3-text-white"
-                    href="https://twitter.com/exhorizons"> game developer
-                    twitter account</a>. Click previews to flip, click
-                descriptions to see original progress tweet.
+            <p class="">
+                Read snippets from my book/s and insights from my research even before I publish them.
             </p>
-
-            <!-- Grid for photos -->
-            <div class="w3-row-padding" style="margin:0 -16px; perspective: 2px;">
-                <div class="w3-third w3-text-white">
-                    <div class="dynamicvisibility simplefade flashbar">
-                        <div class="w3-border toggleable flipbox">
-                            <img src="images/proj_2d.gif" style="width:100%">
-                            <span><a href="https://twitter.com/ExHorizons/status/1413866535433633792"
-                                    target=”_blank”>Showcase of a singleplayer dungeon game with creative skills.
-                                </a></span>
-                        </div>
-                    </div>
-                    <div class="dynamicvisibility simplefade flashbar">
-                        <div class="w3-border toggleable flipbox">
-                            <img src="images/proj_fps.gif" style="width:100%">
-                            <span><a href="https://twitter.com/ExHorizons/status/1432284225047175172"
-                                    target=”_blank”>Adjustable scope zoom in an fps practice project.</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w3-third w3-text-white">
-                    <div class="dynamicvisibility simplefade flashbar">
-                        <div class="w3-border toggleable flipbox">
-                            <img src="images/proj_multiplayer.gif" style="width:100%">
-                            <span><a href="https://twitter.com/ExHorizons/status/1409874010196807684"
-                                    target=”_blank”>Multiplayer 2d topdown zombie game being playtested by myself and
-                                    friends.</a></span>
-                        </div>
-                    </div>
-                    <div class="dynamicvisibility simplefade flashbar">
-                        <div class="w3-border toggleable flipbox">
-                            <img src="images/proj_pathfinding.gif" style="width:100%">
-                            <span><a href="https://twitter.com/ExHorizons/status/1360964709634121728"
-                                    target=”_blank”>Pathfinding system I call "sidestepping" which I wrote for a 2d
-                                    singleplayer
-                                    game.</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="w3-third w3-text-white">
-                    <div class="dynamicvisibility simplefade flashbar">
-                        <div class="w3-border toggleable flipbox">
-                            <img src="images/proj_spaceequip.gif" style="width:100%">
-                            <span><a href="https://twitter.com/ExHorizons/status/1483133128780955649"
-                                    target=”_blank”>Equipping system for 3d/2d space shooter.</a></span>
-                        </div>
-                    </div>
-                    <div class="dynamicvisibility simplefade flashbar">
-                        <div class="w3-border toggleable flipbox">
-                            <img src="images/proj_spaceweapons.gif" style="width:100%">
-                            <span><a href="https://twitter.com/ExHorizons/status/1483862464827891732"
-                                    target=”_blank”>Effects showcase for 3d/2d space shooter.</a></span>
-                        </div>
-                    </div>
-                </div>
-                <!-- End photo grid -->
-            </div>
-        </div>
-
-        <!-- Qualifications Checklist -->
-        <div class=" w3-content w3-text-grey" id="qualifications">
-            <h2 class="w3-text-light-grey dynamicvisibility simplefade">Qualifications Checklist</h2>
-            <p>Compiled from various target job qualifications of different positions. Some items are edited for a more
-                appropriate and accurate description. Updated regularly.</p>
-            <p><i class="fa fa-search w3-hover-opacity"></i>
-                <input type="search" style="margin-left: 10px;" type="text" placeholder="Search Qualifications"
-                    id="qualSearch">
-            </p>
-            <div style="max-height: 30em; min-height: 30em; border: 2px solid grey; overflow-y: scroll;" id="qualList">
-                <p>+<span>Currently pursuing a Bachelor’s degree in game programming.
-                    </span>
-                </p>
-                <p>+<span>C# programming skills and object-oriented development </span></p>
-                <p>+<span>Language acquisition skills </span></p>
-                <p>+<span>Experience developing and debugging in C# and C++, and familiar with Microsoft Visual Studio.
-                    </span></p>
-                <p>+<span>Good understanding of data structures, algorithms, and math (logic, linear algebra, calculus,
-                        statistics and probability, ...)</span></p>
-                <p>+<span>Passion for gaming and familiarity with Ubisoft games </span></p>
-                <p>+<span>Passion for both the tech and art aspects of game development </span></p>
-                <p>+<span>Good Art foundation (form, shape, silhouette) </span></p>
-                <p><span>Functional knowledge of 3DS Max (modeling, texturing, lighting, rigging, animation) </span></p>
-                <p>+<span>Adept in Photoshop </span></p>
-                <p>+<span>Basic understanding of the video game development processes and techniques (current gen)
-                    </span>
-                </p>
-                <p>+<span>Good understanding of rendering budgets and other technical issues related to performance
-                        inreal-time engines
-                    </span>
-                </p>
-                <p>+<span>Knowledge in scripting and programming languages (C#, C++, Python, JavaScript) </span></p>
-                <p>+<span>Able to work under pressure, learn new skills, and develop a good relationship between the
-                        team
-                    </span>
-                </p>
-                <p>+<span>Good interpersonal, organizational and communication skills </span></p>
-                <p>+<span>Creative at finding solutions </span></p>
-                <p>+<span>Adheres to project guidelines, milestones, and deadlines </span></p>
-                <p><span>Knowledgeable with REST API and usage of relational databases e.g. MySQL, SQL Server </span>
-                </p>
-                <p>+<span>Knowledgeable in using HTML/JavaScript/CSS/ similar client-side technologies and has a basic
-                        understanding of node.js </span></p>
-                <p>+<span>Good understanding of common design patterns, familiar with common refactor methods. </span>
-                </p>
-                <p><span>Writes script and creates CI/CD configurations which will automate the build
-                        creation/deployment process. </span></p>
-                <p>+<span>Setup and manage version control system </span></p>
-                <p><span>Configure CI/CD to catch compilation breaks and report to the team </span></p>
-                <p><span>Simplify time-demanding or recurring tasks through the use of automation, packaging, and silent
-                        installations </span></p>
-                <p><span>Monitor the status of build farm and CI/CD pipeline and address the issues if any </span></p>
-                <p><span>Create and operate infrastructure for existing or new build pipeline </span></p>
-                <p>+<span>Manage project user access </span></p>
-                <p>+<span>Work with team to set up and configure the build machines </span></p>
-                <p><span>Work towards automating and evolving the build and deployment infrastructure </span></p>
-                <p>+<span>Work closely with development testers to ensure that correct builds are delivered timely
-                    </span></p>
-                <p>+<span>Proactive on communication channels related to builds </span></p>
-                <p>+<span>Collaborate with developers both locally and across different locations </span></p>
-            </div>
+            <a href="blog.html" class="w3-sectionButton w3-button w3-black w3-wide">BLOG</a>
+            <!-- End Blog Section -->
         </div>
 
         <!-- Contact Section -->
@@ -458,9 +85,6 @@
 
         <!-- END PAGE CONTENT -->
     </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="frontend.js"></script>
 </body>
 
 </html>

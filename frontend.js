@@ -1,88 +1,18 @@
-//#region qual list
-var quallist = document.getElementById("qualList");
-
-for (i = 0; i < quallist.children.length; i++) {
-  var child = quallist.children[i];
-  $(child).addClass("active");
-
-  var qualified = false;
-  if (child.innerHTML[0] == '+') {
-    child.innerHTML = child.innerHTML.substring(1);
-    qualified = true;
+function ToggleCollapsible(elem) {
+  elem.classList.toggle("active");
+  var content = elem.nextElementSibling;
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
   }
 
-  if (qualified)
-    child.innerHTML = '<i class="fa fa-check"></i>' + child.innerHTML;
-  else
-    child.innerHTML = '<i class="fa fa-times"></i>' + child.innerHTML;
+  setTimeout(UpdateDynamicVisObjs, 150);
 }
 
-var input = document.getElementById('qualSearch');
-input.addEventListener('input', SearchQuals);
-function SearchQuals() {
-  var searchstring = input.value.toLowerCase();
-
-  for (i = 0; i < quallist.children.length; i++) {
-    var child = quallist.children[i].children[1];
-    child.innerHTML = child.innerHTML.replace(/<span class="w3-text-white">/g, "").replace(/<\/span>/g, "");
-    var rawtext = child.innerHTML;
-
-    if (searchstring == "" || rawtext.toLowerCase().includes(searchstring)) {
-      $(quallist.children[i]).addClass("active");
-
-      if (searchstring != "") {
-        splittext = rawtext.toLowerCase().split(searchstring)
-
-        var lengthbefore = 0;
-        var resultanttext = "";
-        for (o = 0; o < splittext.length; o++) {
-          resultanttext += rawtext.substring(lengthbefore, lengthbefore + splittext[o].length);
-          lengthbefore += splittext[o].length;
-
-          resultanttext += '<span class="w3-text-white">' + rawtext.substring(lengthbefore, lengthbefore + searchstring.length) + '</span>';
-          lengthbefore += searchstring.length;
-        }
-        child.innerHTML = resultanttext;
-      }
-    } else {
-      $(quallist.children[i]).removeClass("active");
-    }
-  }
+function ToggleToggleable(elem) {
+  elem.classList.toggle("active");
 }
-//#endregion
-
-//#region Collapsible Objects
-var coll = document.getElementsByClassName("collapsibleButton");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-
-    setTimeout(UpdateDynamicVisObjs, 150);
-  });
-}
-//#endregion
-
-//#region Flippable Objects Setup
-var coll = document.getElementsByClassName("toggleable");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-  });
-}
-//#endregion
-
-//#region Scroll Visibility
-UpdateDynamicVisObjs();
 
 function UpdateDynamicVisObjs() {
   let windowheight = $(window).height();
@@ -103,9 +33,6 @@ function UpdateDynamicVisObjs() {
     }
   }
 }
-
-$(document).on("scroll", function () { UpdateDynamicVisObjs(); });
-//#endregion
 
 async function injectHTML(filePath, elem, position) {
   try {
@@ -129,5 +56,17 @@ async function injectHTML(filePath, elem, position) {
   }
 }
 
-injectHTML("./foot.html", document.querySelector("body").children[0], 1);
-injectHTML("./head.html", document.querySelector("body"), -1);
+$(document).ready(function () {
+  $(document).scroll(function () { UpdateDynamicVisObjs(); });
+  console.log("Initialized Scolling Functionality");
+  $(document).on('click', ".collapsibleButton", function () { ToggleCollapsible(this); });
+  console.log("Initialized Collapsible Functionality");
+  $(document).on('click', ".toggleable", function () { ToggleToggleable(this); });
+  console.log("Initialized Toggleable Functionality");
+
+  UpdateDynamicVisObjs();
+
+  injectHTML("./foot.html", document.querySelector("body").children[0], 1);
+  injectHTML("./head.html", document.querySelector("body"), -1);
+});
+

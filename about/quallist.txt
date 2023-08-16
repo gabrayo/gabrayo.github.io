@@ -1,0 +1,32 @@
++Currently pursuing a Bachelor’s degree in game programming.
++C# programming skills and object-oriented development 
++Language acquisition skills 
++Experience developing and debugging in C# and C++, and familiar with Microsoft Visual Studio.
++Good understanding of data structures, algorithms, and math (logic, linear algebra, calculus, statistics and probability, ...)
++Passion for gaming and familiarity with Ubisoft games 
++Passion for both the tech and art aspects of game development 
++Good Art foundation (form, shape, silhouette) 
+Functional knowledge of 3DS Max (modeling, texturing, lighting, rigging, animation) 
++Adept in Photoshop 
++Basic understanding of the video game development processes and techniques (current gen)
++Good understanding of rendering budgets and other technical issues related to performance inreal-time engines
++Knowledge in scripting and programming languages (C#, C++, Python, JavaScript) 
++Able to work under pressure, learn new skills, and develop a good relationship between the team
++Good interpersonal, organizational and communication skills 
++Creative at finding solutions 
++Adheres to project guidelines, milestones, and deadlines 
+Knowledgeable with REST API and usage of relational databases e.g. MySQL, SQL Server
++Knowledgeable in using HTML/JavaScript/CSS/ similar client-side technologies and has a basic understanding of node.js 
++Good understanding of common design patterns, familiar with common refactor methods. 
+Writes script and creates CI/CD configurations which will automate the build creation/deployment process. 
++Setup and manage version control system 
+Configure CI/CD to catch compilation breaks and report to the team 
+Simplify time-demanding or recurring tasks through the use of automation, packaging, and silent installations 
+Monitor the status of build farm and CI/CD pipeline and address the issues if any 
+Create and operate infrastructure for existing or new build pipeline 
++Manage project user access 
++Work with team to set up and configure the build machines 
+Work towards automating and evolving the build and deployment infrastructure 
++Work closely with development testers to ensure that correct builds are delivered timely
++Proactive on communication channels related to builds 
++Collaborate with developers both locally and across different locations 
