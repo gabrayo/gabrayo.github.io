@@ -1,6 +1,6 @@
 async function injectQualList(elem, after) {
     try {
-        const response = await fetch("./after/quallist.txt");
+        const response = await fetch("./about/quallist.html");
         if (!response.ok) {
             console.log("No response");
             return;
@@ -19,9 +19,7 @@ async function injectQualList(elem, after) {
                 elem.innerHTML += "<p><span>" + curLine + "</span></p>";
             }
         }
-
         after();
-
     } catch (err) {
         console.error(err.message);
     }
@@ -45,42 +43,46 @@ function SetUpQualList(quallist) {
     }
 }
 
+function UpdateSearchBox(input, quallist) {
+    console.log(input.value);
+    
+    var searchstring = input.value.toLowerCase();
+    
+    for (i = 0; i < quallist.children.length; i++) {
+        var child = quallist.children[i].children[1];
+        var rawtext = child.innerHTML;
+
+        if (searchstring == "" || rawtext.toLowerCase().includes(searchstring)) {
+            $(quallist.children[i]).addClass("active");
+
+            if (searchstring != "") {
+                splittext = rawtext.toLowerCase().split(searchstring)
+
+                var lengthbefore = 0;
+                var resultanttext = "";
+                for (o = 0; o < splittext.length; o++) {
+                    resultanttext += rawtext.substring(lengthbefore, lengthbefore + splittext[o].length);
+                    lengthbefore += splittext[o].length;
+
+                    resultanttext += '<span class="w3-text-white">' + rawtext.substring(lengthbefore, lengthbefore + searchstring.length) + '</span>';
+                    lengthbefore += searchstring.length;
+                }
+                child.innerHTML = resultanttext;
+            }
+        } else {
+            $(quallist.children[i]).removeClass("active");
+        }
+    }
+}
+
 $(document).ready(function () {
     var quallist = document.getElementById("qualList");
     injectQualList(quallist, function () {
         SetUpQualList(quallist);
 
-        $(document).on('input', "#qualSearch", SearchQuals);
-        function SearchQuals() {
+        $(document).on('input', "#qualSearch", function () {
             var input = document.getElementById('qualSearch');
-            var searchstring = input.value.toLowerCase();
-
-            for (i = 0; i < quallist.children.length; i++) {
-                var child = quallist.children[i].children[1];
-                child.innerHTML = child.innerHTML.replace(/<span class="w3-text-white">/g, "").replace(/<\/span>/g, "");
-                var rawtext = child.innerHTML;
-
-                if (searchstring == "" || rawtext.toLowerCase().includes(searchstring)) {
-                    $(quallist.children[i]).addClass("active");
-
-                    if (searchstring != "") {
-                        splittext = rawtext.toLowerCase().split(searchstring)
-
-                        var lengthbefore = 0;
-                        var resultanttext = "";
-                        for (o = 0; o < splittext.length; o++) {
-                            resultanttext += rawtext.substring(lengthbefore, lengthbefore + splittext[o].length);
-                            lengthbefore += splittext[o].length;
-
-                            resultanttext += '<span class="w3-text-white">' + rawtext.substring(lengthbefore, lengthbefore + searchstring.length) + '</span>';
-                            lengthbefore += searchstring.length;
-                        }
-                        child.innerHTML = resultanttext;
-                    }
-                } else {
-                    $(quallist.children[i]).removeClass("active");
-                }
-            }
-        }
+            UpdateSearchBox(input, quallist);
+        });
     });
 });
