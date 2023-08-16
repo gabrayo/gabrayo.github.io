@@ -1,32 +1,4 @@
-
-//Collapsible Objects Setup
-var coll = document.getElementsByClassName("collapsibleButton");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-    var content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-
-    setTimeout(UpdateDynamicVisObjs, 150);
-  });
-}
-
-//Flippable Objects Setup
-var coll = document.getElementsByClassName("toggleable");
-var i;
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", function () {
-    this.classList.toggle("active");
-  });
-}
-//qual list Setup
+//#region qual list
 var quallist = document.getElementById("qualList");
 
 for (i = 0; i < quallist.children.length; i++) {
@@ -77,8 +49,39 @@ function SearchQuals() {
     }
   }
 }
+//#endregion
 
-//Scroll Visibility
+//#region Collapsible Objects
+var coll = document.getElementsByClassName("collapsibleButton");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+
+    setTimeout(UpdateDynamicVisObjs, 150);
+  });
+}
+//#endregion
+
+//#region Flippable Objects Setup
+var coll = document.getElementsByClassName("toggleable");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function () {
+    this.classList.toggle("active");
+  });
+}
+//#endregion
+
+//#region Scroll Visibility
 UpdateDynamicVisObjs();
 
 function UpdateDynamicVisObjs() {
@@ -102,4 +105,29 @@ function UpdateDynamicVisObjs() {
 }
 
 $(document).on("scroll", function () { UpdateDynamicVisObjs(); });
+//#endregion
 
+async function injectHTML(filePath, elem, position) {
+  try {
+    const response = await fetch(filePath);
+    if (!response.ok) {
+      return;
+    }
+    const text = await response.text();
+
+    if (position == -1) {
+      elem.innerHTML = text + elem.innerHTML;
+    }
+    else if (position == 0) {
+      elem.innerHTML = text;
+    }
+    else if (position == 1) {
+      elem.innerHTML = elem.innerHTML + text;
+    }
+  } catch (err) {
+    console.error(err.message);
+  }
+}
+
+injectHTML("./foot.html", document.querySelector("body").children[0], 1);
+injectHTML("./head.html", document.querySelector("body"), -1);
