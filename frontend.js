@@ -1,3 +1,4 @@
+//#region Togglers
 function ToggleCollapsible(elem) {
   elem.classList.toggle("active");
   var content = elem.nextElementSibling;
@@ -13,7 +14,7 @@ function ToggleCollapsible(elem) {
 function ToggleToggleable(elem) {
   elem.classList.toggle("active");
 }
-
+//#endregion
 function UpdateDynamicVisObjs() {
   let windowheight = $(window).height();
 
@@ -33,8 +34,12 @@ function UpdateDynamicVisObjs() {
     }
   }
 }
+//#region File Injection
+function QInject(filePath, after) {
+  ReturnFetch(filePath, after);
+}
 
-async function injectHTML(filePath, elem, position) {
+async function ReturnFetch(filePath, after) {
   try {
     const response = await fetch(filePath);
     if (!response.ok) {
@@ -42,17 +47,53 @@ async function injectHTML(filePath, elem, position) {
     }
     const text = await response.text();
 
-    if (position == -1) {
-      elem.innerHTML = text + elem.innerHTML;
-    }
-    else if (position == 0) {
-      elem.innerHTML = text;
-    }
-    else if (position == 1) {
-      elem.innerHTML = elem.innerHTML + text;
-    }
+    after(text);
+
   } catch (err) {
     console.error(err.message);
+  }
+}
+
+function injectHTML(text, elem, position) {
+  if (position == -1) {
+    elem.innerHTML = text + elem.innerHTML;
+  }
+  else if (position == 0) {
+    elem.innerHTML = text;
+  }
+  else if (position == 1) {
+    elem.innerHTML = elem.innerHTML + text;
+  }
+}
+//#endregion
+
+function GetRawInnerText(text){
+  var rawText = "";
+  var inTag = false;
+
+  for(i = 0; i < text.length; i++){
+    if(text[i] == '<'){
+      inTag = true;
+    }
+  
+    if(inTag == false){
+      rawText += text[i];
+    }
+
+    else if(text[i] == '>'){
+      inTag = false;
+    }
+  }
+
+  return rawText;
+}
+
+function SetActive(elem, bool){
+  if(bool){
+    $(elem).addClass("active");
+  }
+  else{
+    $(elem).removeClass("active");
   }
 }
 
@@ -64,9 +105,9 @@ $(document).ready(function () {
   $(document).on('click', ".toggleable", function () { ToggleToggleable(this); });
   console.log("Initialized Toggleable Functionality");
 
-  UpdateDynamicVisObjs();
+  QInject("./foot.html", function (text) { injectHTML(text, document.querySelector("body").children[0], 1); });
+  QInject("./head.html", function (text) { injectHTML(text, document.querySelector("body"), -1); });
 
-  injectHTML("./foot.html", document.querySelector("body").children[0], 1);
-  injectHTML("./head.html", document.querySelector("body"), -1);
+  UpdateDynamicVisObjs();
 });
 

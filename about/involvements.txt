@@ -1,0 +1,33 @@
+>>>Game Development
+    exp_cssClub.jpg
+    DLSU Organization President
+    at CCP
+        A.Y. 2021-2022 president at Competetive Computer Programmers (CCP). I delivered 2 seminars here about game development. 
+    exp_projExp.png
+    4+ years Project Experience 
+    Self-taught
+        10 major projects within 4+ years with 3 active. With some projects delving into specific areas of game development including: Steam multiplayer, Serialization, and Advanced code architecture. Project updates can be found in my <a class="w3-text-white" href="https://twitter.com/exhorizons">game developer twitter account</a>.
+>>>Work Experience
+    exp_lscs.png
+    DLSU Academics Officer
+    at LSCS
+        Regularly holding programming tutoring sessions at La Salle Computer Society and holding academic seminars regarding programming.
+>>>Publications
+    exp_paper.png
+    Published Author 
+    at DLSU
+        I love publishing research articles.
+>>>Front-end Web Development
+    exp_website.png
+    Site Creation 
+    commissioned
+        Actively developing sites such as <a class="w3-text-white" href="https://github.com/gabrayo/gabrayo.github.io">this</a> portfolio site.
+>>>Music Production
+    exp_piano.png
+    Classically Trained
+    at GSMS
+        Won 5 "best of the year" trophies in a row in my 7 years of training at the Guy Simondac Music Studio (GSMS). 
+    exp_musicprod.png
+    Multi-genre Experience 
+    Self-taught
+        Delved into producing multiple genres of music. My productions can be seen in <a class="w3-text-white" href="https://www.youtube.com/channel/UCLB9mcl3Z1OuJyk_SNtiFxw">my youtube channel.</a>
