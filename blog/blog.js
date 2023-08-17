@@ -12,7 +12,7 @@ function InjectManifest(text) {
     }
 }
 
-function InjectBlog(text){
+function InjectBlog(text) {
     var body = document.getElementById("blogbody");
     var lines = text.split("\n");
     document.getElementById("blogtitle").innerHTML = lines[0];
@@ -23,22 +23,32 @@ function InjectBlog(text){
     }
 }
 
+function InjectMetaDesc(text){
+    var lines = text.split("\n");
+    document.getElementById("metatitle").innerHTML = lines[0];
+    document.getElementById("metadesc").setAttribute("content", lines[1]);
+}
+
 $(document).ready(function () {
-    setTimeout(function () {
-        var loc = window.location.href;
+    var loc = window.location.href;
 
-        if (loc.includes("#")) {
-            var postId = loc.split("#")[1];
-            $("#search").addClass("w3-hide");
-            $("#blogarea").removeClass("w3-hide");
+    if (loc.includes("#")) {
+        var postId = loc.split("#")[1];
+        $("#search").addClass("w3-hide");
+        $("#blogarea").removeClass("w3-hide");
 
-            QInject("./blog/logs/" + postId + "/blog.txt", InjectBlog);
+        setTimeout(function () {
+            var blogDirectory = "./blog/logs/" + postId + "/blog.txt";
+            QInject(blogDirectory, InjectMetaDesc);
+            QInject(blogDirectory, InjectBlog);
 
-            window.onhashchange = function(){
+            window.onhashchange = function () {
                 location.reload();
             };
-        }
-        else {
+        }, 150);
+    }
+    else {
+        setTimeout(function () {
             QInject("./blog/manifest.txt", InjectManifest);
 
             setTimeout(function () {
@@ -48,6 +58,7 @@ $(document).ready(function () {
                     location.reload();
                 });
             }, 150);
-        }
-    }, 150);
+
+        }, 150);
+    }
 });
