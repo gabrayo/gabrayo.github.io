@@ -142,6 +142,38 @@ function InjectLanguage(text) {
     }
 }
 
+function InjectProjects(text){
+    var elem = document.getElementById("projects");
+    var lines = text.split("\n");
+    var newHTML = "";
+
+    for (i = 0; i < lines.length; i += 6) {
+        newHTML += '<div class="w3-third w3-text-white">';
+
+        for (c = 0; c < 6; c += 3) {
+            if(lines.length > i + c + 2){
+            newHTML +=
+                '<div class="dynamicvisibility simplefade flashbar">' +
+                '<div class="w3-border toggleable flipbox">' +
+                '<img src="images/' +
+                lines[i + c] +
+                '" style="width:100%">' +
+                '<span><a href="' +
+                lines[i + c + 1] +
+                '"' +
+                'target=”_blank”>' +
+                lines[i + c + 2] +
+                '</a></span>' +
+                '</div>' +
+                '</div>';
+            }
+        }
+        newHTML += '</div>';
+    }
+
+    elem.innerHTML = newHTML;
+}
+
 $(document).ready(function () {
     setTimeout(function () {
 
@@ -154,6 +186,7 @@ $(document).ready(function () {
         QInject("./about/skills.txt", InjectSkillList);
         QInject("./about/involvements.txt", InjectInvolvements);
         QInject("./about/language.txt", InjectLanguage);
+        QInject("./about/projects.txt", InjectProjects)
 
         setTimeout(UpdateDynamicVisObjs, 150);
     }, 150);

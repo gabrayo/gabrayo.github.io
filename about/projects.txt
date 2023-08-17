@@ -1,0 +1,18 @@
+proj_2d.gif
+https://twitter.com/ExHorizons/status/1413866535433633792
+Showcase of a singleplayer dungeon game with creative skills.
+proj_fps.gif
+https://twitter.com/ExHorizons/status/1432284225047175172"
+Adjustable scope zoom in an fps practice project.
+proj_multiplayer.gif
+https://twitter.com/ExHorizons/status/1409874010196807684"
+Multiplayer 2d topdown zombie game being playtested by myself and friends.
+proj_pathfinding.gif
+https://twitter.com/ExHorizons/status/1360964709634121728"
+Pathfinding system I call "sidestepping" which I wrote for a 2d singleplayer game.
+proj_spaceequip.gif
+https://twitter.com/ExHorizons/status/1483133128780955649"
+Equipping system for 3d/2d space shooter.
+proj_spaceweapons.gif
+https://twitter.com/ExHorizons/status/1483862464827891732"
+Effects showcase for 3d/2d space shooter.
