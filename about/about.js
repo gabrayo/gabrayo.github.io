@@ -1,6 +1,6 @@
 const QualListId = "qualList";
 
-function InjectQualList(text) {
+function InjectManifest(text) {
     var elem = document.getElementById(QualListId);
     var lines = text.split("\n");
 
@@ -126,7 +126,7 @@ function InjectInvolvements(text) {
         }
     }
 
-    elem.innerHTML = newHTML;
+    elem.innerHTML += newHTML;
 }
 
 function InjectLanguage(text) {
@@ -191,7 +191,7 @@ function InjectProjects(text){
 $(document).ready(function () {
     setTimeout(function () {
 
-        QInject("./about/quallist.txt", InjectQualList);
+        QInject("./about/quallist.txt", InjectManifest);
 
         $("#qualSearch").on("input", function () {
             UpdateSearchBox(document.getElementById('qualSearch'), document.getElementById(QualListId));

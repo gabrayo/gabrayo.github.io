@@ -67,20 +67,20 @@ function injectHTML(text, elem, position) {
 }
 //#endregion
 
-function GetRawInnerText(text){
+function GetRawInnerText(text) {
   var rawText = "";
   var inTag = false;
 
-  for(i = 0; i < text.length; i++){
-    if(text[i] == '<'){
+  for (i = 0; i < text.length; i++) {
+    if (text[i] == '<') {
       inTag = true;
     }
-  
-    if(inTag == false){
+
+    if (inTag == false) {
       rawText += text[i];
     }
 
-    else if(text[i] == '>'){
+    else if (text[i] == '>') {
       inTag = false;
     }
   }
@@ -88,11 +88,11 @@ function GetRawInnerText(text){
   return rawText;
 }
 
-function SetActive(elem, bool){
-  if(bool){
+function SetActive(elem, bool) {
+  if (bool) {
     $(elem).addClass("active");
   }
-  else{
+  else {
     $(elem).removeClass("active");
   }
 }
@@ -106,7 +106,9 @@ $(document).ready(function () {
   console.log("Initialized Toggleable Functionality");
 
   QInject("./foot.html", function (text) { injectHTML(text, document.querySelector("body").children[0], 1); });
-  QInject("./head.html", function (text) { injectHTML(text, document.querySelector("body"), -1); });
+  setTimeout(function () {
+    QInject("./head.html", function (text) { injectHTML(text, document.querySelector("body"), -1); });
+  }, 50);
 
   UpdateDynamicVisObjs();
 });
