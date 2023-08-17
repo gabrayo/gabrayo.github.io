@@ -96,18 +96,19 @@ function InjectInvolvements(text) {
         if (lines[i].includes(">>>")) {
 
             if (i > 0) {
-                newHTML += "</div>";
+                newHTML += "</div></div>";
             }
 
             newHTML +=
                 '<div class="w3-sectionButton">' +
                 '<button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">' +
                 lines[i].substring(3) +
-                '</button>';
+                '</button>' +
+                '<div class="content">' +
+                '<hr style="width:200px" class="w3-opacity">';
         }
         else {
-            newHTML += '<div class="content">' +
-                '<hr style="width:200px" class="w3-opacity">' +
+            newHTML +=
                 '<div>' +
                 '<img src="about/expimgs/' +
                 lines[i].trim() +
@@ -119,7 +120,7 @@ function InjectInvolvements(text) {
                 '</span>' +
                 lines[i + 2].trim() + '</p>' +
                 '<p>' +
-                lines[i + 3].trim() + '</p><br></div></div></div>';
+                lines[i + 3].trim() + '</p><br></div></div>';
 
             i += 3;
         }
@@ -149,6 +150,15 @@ function InjectProjects(text){
 
     for (i = 0; i < lines.length; i += 6) {
         newHTML += '<div class="w3-third w3-text-white">';
+        newHTML +=
+                '<div class="w3-sectionButton">' +
+                '<button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">' +
+                "Show Set " + ((i / 6) + 1) +
+                '</button>';
+
+        newHTML += '<div class="content">' +
+        '<hr style="width:200px" class="w3-opacity">' +
+        '<div>';
 
         for (c = 0; c < 6; c += 3) {
             if(lines.length > i + c + 2){
@@ -167,8 +177,12 @@ function InjectProjects(text){
                 '</div>' +
                 '</div>';
             }
+
         }
-        newHTML += '</div>';
+        newHTML +=
+        '</div>' + 
+        '<hr style="width:200px" class="w3-opacity">' +
+        '</div></div></div>';
     }
 
     elem.innerHTML = newHTML;
