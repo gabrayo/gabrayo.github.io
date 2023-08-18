@@ -105,9 +105,9 @@ $(document).ready(function () {
   $(document).on('click', ".toggleable", function () { ToggleToggleable(this); });
   console.log("Initialized Toggleable Functionality");
 
-  QInject("./foot.html", function (text) { injectHTML(text, document.querySelector("body").children[0], 1); });
+  QInject("/foot.html", function (text) { injectHTML(text, document.querySelector("body").children[0], 1); });
   setTimeout(function () {
-    QInject("./head.html", function (text) { injectHTML(text, document.querySelector("body"), -1); });
+    QInject("/head.html", function (text) { injectHTML(text, document.querySelector("body"), -1); });
   }, 50);
 
   UpdateDynamicVisObjs();

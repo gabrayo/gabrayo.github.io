@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "atomic": "c",
+        "cstring": "c",
+        "xmemory": "c",
+        "xstring": "c",
+        "xutility": "c",
+        "stdio.h": "c",
+        "stdarg.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c"
+    }
+}

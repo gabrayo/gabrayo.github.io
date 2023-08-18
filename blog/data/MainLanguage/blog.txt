@@ -1,4 +1,5 @@
 Have a main language
+Know the difference between mono-language and multi-language pedagogy and how they work together for your learning.
 Excerpt from How To Really Teach Yourself Programming
 
 When I started programming at 12 years old, I started with JavaScript for web development. At 14, I started my venture in C# and it has been my main language ever since. This meant that a majority of my time in Junior High School was spent learning C#. When I went into Senior High School two years later, the curriculum required me to learn Python. Do note that this was my first time encountering an academic course/subject that was purely about programming. Nonetheless, I excelled in Python effortlessly. I saw Python as a weird version of C#, in fact, I started seeing everything as C#. Then came my first year at college, the curriculum included C programming. That too, I saw as just ‘another C#.’ Even in advanced topics like file serialization, I was able to apply my knowledge in C# into my discovery of C, and then eventually C++.
@@ -12,12 +13,12 @@ How do you do structs/classes here?
 How do you write files using this language?
 What are the fundamental and standard libraries I need to be aware of that this language has?
 
-<img src="blog/logs/MainLanguage/image1.png">
+<img src="/blog/data/MainLanguage/image1.png">
 
 This is a figure I showed in the original seminar. It shows a graph with two bars symbolizing your expertise in your main language, and in a possible new language. Then, it asks the question, “what do I not know?” Subsequently, it answers this question by showing that what you do not know is simply what you already know in your main language.
 Early on, when I was learning C#, I had stumbled across a very pivotal discovery regarding this language— delegates. The thought of being able to put functions in variables was so revolutionary for me at the time. So revolutionary, that this was the feature I looked for in every single language I put my hands on that was not C#. If a language did have it, great! If a language did not, I would have dedicated ample time into learning how to get the same effect. That was the case with C, as mentioned earlier. As I progressed through college, there had been an increasing number of opportunities that arose where I could use the concept of delegates even in C assignments. Going back, the reason I even learned about this concept in C is because I already knew it in C#. Notice the following graph:
 
-<img src="blog/logs/MainLanguage/image2.png">
+<img src="/blog/data/MainLanguage/image2.png">
 
 The concept is still the same, if you are trying to learn C# for example, instead of just your main language to assist you, the ideas from C++, C, SQL, and Python will help you fill in that gap of knowledge that you have in C#.
 So, to go back to the question introduced in the previous chapter, “how do we direct ourselves?” I would say that the first step is having a main language. Another question I asked at this point in the seminar was this:
