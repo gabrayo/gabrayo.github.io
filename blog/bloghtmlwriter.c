@@ -21,7 +21,7 @@ char **GetManifest(int *outSize)
         {
             curChar = fgetc(fptr);
 
-            if (curChar == '\n')
+            if (curChar == '\n' || curChar == EOF)
             {
 
                 if (cur > 0)
@@ -36,7 +36,7 @@ char **GetManifest(int *outSize)
                 cur++;
                 buffer = realloc(buffer, sizeof(char) * (cur + 1));
             }
-        } while (newLinesEncountered < 3 && curChar != EOF);
+        } while (newLinesEncountered < 1 && curChar != EOF);
 
         names[i] = buffer;
     }

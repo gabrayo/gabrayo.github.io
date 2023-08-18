@@ -1,10 +1,4 @@
 3
 MainLanguage
-Have a main language
-    Know the difference between mono-language and multi-language pedagogy and how they work together for your learning.
 Test1
-Test1
-    Testing
 Test2
-Test2
-    Testing
