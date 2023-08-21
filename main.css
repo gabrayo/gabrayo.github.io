@@ -8,6 +8,7 @@ html {
 *:after {
     box-sizing: inherit
 }
+
 /*#endregion*/
 
 /*#region Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
@@ -176,6 +177,10 @@ textarea {
 /*#endregion*/
 
 /*#region general text and html elements*/
+* {
+    transition: all 300ms;
+}
+
 html,
 body {
     font-family: Verdana, sans-serif;
@@ -184,7 +189,18 @@ body {
 }
 
 html {
-    overflow-x: hidden
+    overflow-x: hidden;
+}
+
+/* Code for Firefox */
+::-moz-selection {
+    color: rgb(0, 0, 0);
+    background: rgb(167, 167, 167);
+}
+
+::selection {
+    color: rgb(0, 0, 0);
+    background: rgb(167, 167, 167);
 }
 
 h1 {
@@ -231,7 +247,7 @@ h1,
 h2,
 h3,
 h4,
-h5{
+h5 {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 400;
     margin: 10px 0
@@ -255,6 +271,7 @@ img {
 a {
     color: inherit
 }
+
 /*#endregion*/
 
 /*#region input*/
@@ -269,7 +286,7 @@ a {
     background-color: inherit;
     text-align: center;
     cursor: pointer;
-    white-space: nowrap
+    white-space: nowrap;
 }
 
 .w3-button {
@@ -299,6 +316,7 @@ a {
     border-bottom: 1px solid #ccc;
     width: 100%
 }
+
 /*#endregion*/
 
 .w3-sidebar {
@@ -737,6 +755,7 @@ a {
 .w3-circle {
     border-radius: 50%
 }
+
 .w3-row-padding,
 .w3-row-padding>.w3-half,
 .w3-row-padding>.w3-third,
@@ -756,6 +775,7 @@ a {
     margin-top: 16px;
     margin-bottom: 16px
 }
+
 /*#endregion*/
 
 /*#region code*/
@@ -780,6 +800,7 @@ a {
     padding-right: 4px;
     font-size: 110%
 }
+
 /*#endregion*/
 
 /*#region card*/
@@ -792,6 +813,7 @@ a {
 .w3-hover-shadow:hover {
     box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 4px 20px 0 rgba(0, 0, 0, 0.19)
 }
+
 /*#endregion*/
 
 /*#region opacity*/
@@ -812,6 +834,7 @@ a {
 .w3-opacity-min {
     opacity: 0.75
 }
+
 /*#endregion*/
 
 /*#region filters*/
@@ -844,6 +867,7 @@ a {
 .w3-sepia-min {
     filter: sepia(50%)
 }
+
 /*#endregion*/
 
 /*#region size, positioning and sectioning*/
@@ -1022,12 +1046,13 @@ a {
 .w3-right {
     float: right !important
 }
+
 /*#endregion*/
 
 /*#region background colors*/
 .w3-button:hover {
     color: #000 !important;
-    background-color: #ccc !important
+    background-color: white !important
 }
 
 .w3-transparent,
@@ -1226,6 +1251,7 @@ a {
     color: #000 !important;
     background-color: #ddffff !important
 }
+
 /*#endregion*/
 
 /*#region text colors*/
@@ -1366,6 +1392,7 @@ a {
 .w3-hover-text-dark-gray:hover {
     color: #3a3a3a !important
 }
+
 /*#endregion*/
 
 /*#region borders*/
@@ -1526,18 +1553,20 @@ a {
 .w3-hover-border-pale-blue:hover {
     border-color: #e7ffff !important
 }
+
 /*#endregion*/
 
 /*#region Section Button */
-.w3-sectionButton{
+.w3-sectionButton {
     border: 2px solid grey;
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
-.w3-sectionButton > button{
+.w3-sectionButton>button {
     width: 100%;
 }
+
 /*#endregion*/
 
 /*#region Collapsible Styles */
@@ -1558,6 +1587,7 @@ a {
     overflow: hidden;
     transition: max-height 0.2s ease-out;
 }
+
 /*#endregion*/
 
 /*#region Toggleable*/
@@ -1604,6 +1634,7 @@ a {
     opacity: 0.98;
     display: flex;
 }
+
 /*#endregion*/
 
 /*#region Dynamic Visibility Styles */
@@ -1650,6 +1681,7 @@ a {
     transform: scaleX(0);
     transform-origin: bottom right;
 }
+
 /*#endregion*/
 
 /*#region Qualification List */
@@ -1674,6 +1706,7 @@ a {
 #qualList>p>i {
     margin: 0 10px 0 0;
 }
+
 /*#endregion*/
 
 /*#region circle percentage styles */
@@ -1740,14 +1773,16 @@ a {
 .dynamicvisibility.pie {
     transition: --p 1s;
 }
+
 /*#endregion*/
 
 /*#region blog*/
-#blogbody img{
+#blogbody img {
     display: block;
     max-width: 100%;
     max-height: 20em;
     margin-left: auto;
     margin-right: auto;
 }
+
 /*#endregion*/

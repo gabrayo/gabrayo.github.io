@@ -1,15 +1,6 @@
 function InjectManifest(text) {
     var elem = document.getElementById("searchresults");
-    var lines = text.split("\n");
-
-    for (i = 1; i < lines.length; i += 3) {
-        elem.innerHTML +=
-            '<br>' +
-            '<a href="blog/pages/' + lines[i] + '.html"><div class="w3-container w3-border w3-hover-grey">' +
-            '<h3>' + lines[i + 1] + '</h3>' +
-            '<p>' + lines[i + 2] + '</p>' +
-            '</div></a>';
-    }
+    elem.innerHTML = text;
 }
 
 function InjectBlog(text) {
@@ -31,7 +22,7 @@ function InjectMetaDesc(text) {
 
 $(document).ready(function () {
     setTimeout(function () {
-        QInject("./blog/manifest.txt", InjectManifest);
+        QInject("./blog/searchresults.html", InjectManifest);
 
         setTimeout(function () {
             UpdateDynamicVisObjs();

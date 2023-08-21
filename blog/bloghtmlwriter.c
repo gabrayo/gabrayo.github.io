@@ -46,17 +46,9 @@ char **GetManifest(int *outSize)
     return names;
 }
 
-void GetHtmlTemplate(char **out1, char **out2, char **out3, char **out4, char **out5, char **out6)
+void GetHtmlTemplate(char dir[], int divNum, char divs[][20], char **outs)
 {
-    FILE *fptr = fopen("blog/blogtemplate.html", "r");
-
-    int divNum = 5;
-    char divs[5][20];
-    strcpy(divs[0], "<!--TITLE-->");
-    strcpy(divs[1], "<!--DESC-->");
-    strcpy(divs[2], "<!--BTITLE-->");
-    strcpy(divs[3], "<!--SUB-->");
-    strcpy(divs[4], "<!--CONTENT-->");
+    FILE *fptr = fopen(dir, "r");
 
     int cur = 0;
     char **ins = malloc(sizeof(void *) * (divNum + 1));
@@ -98,12 +90,10 @@ void GetHtmlTemplate(char **out1, char **out2, char **out3, char **out4, char **
     ins[position][cur - 1] = '\0';
     fclose(fptr);
 
-    *out1 = ins[0];
-    *out2 = ins[1];
-    *out3 = ins[2];
-    *out4 = ins[3];
-    *out5 = ins[4];
-    *out6 = ins[5];
+    for (int i = 0; i < (divNum + 1); i++)
+    {
+        outs[i] = ins[i];
+    }
 
     free(ins);
 }
@@ -159,14 +149,24 @@ int main()
     int size;
     char **names = GetManifest(&size);
 
-    char *beforeTitle;
-    char *beforeDesc;
-    char *beforeBTitle;
-    char *beforeBSTitle;
-    char *beforeContent;
-    char *after;
+    char blogtempdivs[5][20];
+    strcpy(blogtempdivs[0], "<!--TITLE-->");
+    strcpy(blogtempdivs[1], "<!--DESC-->");
+    strcpy(blogtempdivs[2], "<!--BTITLE-->");
+    strcpy(blogtempdivs[3], "<!--SUB-->");
+    strcpy(blogtempdivs[4], "<!--CONTENT-->");
+    char **blogtempsecs = malloc(sizeof(void *) * 6);
+    GetHtmlTemplate("blog/blogtemplate.html", 5, blogtempdivs, blogtempsecs);
 
-    GetHtmlTemplate(&beforeTitle, &beforeDesc, &beforeBTitle, &beforeBSTitle, &beforeContent, &after);
+    char blogbuttondivs[3][20];
+    strcpy(blogbuttondivs[0], "<!--LINK-->");
+    strcpy(blogbuttondivs[1], "<!--TITLE-->");
+    strcpy(blogbuttondivs[2], "<!--DESC-->");
+    char **blogbuttonsecs = malloc(sizeof(void *) * 4);
+    GetHtmlTemplate("blog/blogbuttontemplate.html", 3, blogbuttondivs, blogbuttonsecs);
+
+    const char *sresultsDir = "blog/searchresults.html";
+    fclose(fopen(sresultsDir, "w"));
 
     for (int i = 0; i < size; i++)
     {
@@ -183,18 +183,17 @@ int main()
 
         FILE *fptr = fopen(dir, "w");
 
-
         if (blogbody != NULL)
         {
-            fprintf(fptr, beforeTitle);
+            fprintf(fptr, blogtempsecs[0]);
             fprintf(fptr, blogbody[0]);
-            fprintf(fptr, beforeDesc);
+            fprintf(fptr, blogtempsecs[1]);
             fprintf(fptr, blogbody[1]);
-            fprintf(fptr, beforeBTitle);
+            fprintf(fptr, blogtempsecs[2]);
             fprintf(fptr, blogbody[0]);
-            fprintf(fptr, beforeBSTitle);
+            fprintf(fptr, blogtempsecs[3]);
             fprintf(fptr, blogbody[2]);
-            fprintf(fptr, beforeContent);
+            fprintf(fptr, blogtempsecs[4]);
 
             for (int l = 3; l < linecount; l++)
             {
@@ -203,7 +202,19 @@ int main()
                 fprintf(fptr, "</p>\n");
             }
 
-            fprintf(fptr, after);
+            fprintf(fptr, blogtempsecs[5]);
+
+            FILE *sResults = fopen(sresultsDir, "a");
+
+            fprintf(sResults, blogbuttonsecs[0]);
+            fprintf(sResults, dir);
+            fprintf(sResults, blogbuttonsecs[1]);
+            fprintf(sResults, blogbody[0]);
+            fprintf(sResults, blogbuttonsecs[2]);
+            fprintf(sResults, blogbody[1]);
+            fprintf(sResults, blogbuttonsecs[3]);
+
+            fclose(sResults);
         }
 
         fclose(fptr);
@@ -215,6 +226,10 @@ int main()
             free(blogbody);
     }
 
-    free(after);
+    for (int i = 0; i < 6; i++)
+    {
+        free(blogtempsecs[i]);
+    }
+    
     free(names);
 }
