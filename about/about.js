@@ -100,16 +100,16 @@ function InjectInvolvements(text) {
             }
 
             newHTML +=
-                '<div class="w3-sectionButton">' +
-                '<button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">' +
+                '<div class="w3-border w3-primarycolor w3-margin-top">' +
+                '<div class="w3-left-align w3-block w3-padding w3-padding-16 w3-hover-hovercolor collapsibleButton w3-wide dynamicvisibility simplefade">' +
                 lines[i].substring(3) +
-                '</button>' +
+                '</div>' +
                 '<div class="content">' +
-                '<hr style="width:200px" class="w3-opacity">';
+                '<hr style="width:200px" class="w3-margin w3-translucent">';
         }
         else {
             newHTML +=
-                '<div>' +
+                '<div class="w3-padding">' +
                 '<img src="about/expimgs/' +
                 lines[i].trim() +
                 '" alt="Avatar"' +
@@ -151,19 +151,19 @@ function InjectProjects(text){
     for (i = 0; i < lines.length; i += 6) {
         newHTML += '<div class="w3-third w3-text-white">';
         newHTML +=
-                '<div class="w3-sectionButton">' +
-                '<button class="collapsibleButton w3-black w3-wide dynamicvisibility simplefade">' +
+                '<div class="w3-border">' +
+                '<div class="w3-left-align w3-block w3-padding w3-padding-16 w3-hover-hovercolor collapsibleButton w3-wide dynamicvisibility simplefade">' +
                 "Show Set " + ((i / 6) + 1) +
-                '</button>';
+                '</div>';
 
         newHTML += '<div class="content">' +
-        '<hr style="width:200px" class="w3-opacity">' +
-        '<div>';
+        '<div class="w3-padding">' +
+        '<hr style="width:200px" class="w3-translucent">';
 
         for (c = 0; c < 6; c += 3) {
             if(lines.length > i + c + 2){
             newHTML +=
-                '<div class="dynamicvisibility simplefade flashbar">' +
+                '<div class="w3-margin-top dynamicvisibility simplefade">' +
                 '<div class="w3-border toggleable flipbox">' +
                 '<img src="images/' +
                 lines[i + c] +
@@ -181,7 +181,6 @@ function InjectProjects(text){
         }
         newHTML +=
         '</div>' + 
-        '<hr style="width:200px" class="w3-opacity">' +
         '</div></div></div>';
     }
 

@@ -816,27 +816,6 @@ a {
 
 /*#endregion*/
 
-/*#region opacity*/
-.w3-opacity,
-.w3-hover-opacity:hover {
-    opacity: 0.60
-}
-
-.w3-opacity-off,
-.w3-hover-opacity-off:hover {
-    opacity: 1
-}
-
-.w3-opacity-max {
-    opacity: 0.25
-}
-
-.w3-opacity-min {
-    opacity: 0.75
-}
-
-/*#endregion*/
-
 /*#region filters*/
 .w3-greyscale-max,
 .w3-grayscale-max,
@@ -870,7 +849,7 @@ a {
 
 /*#endregion*/
 
-/*#region size, positioning and sectioning*/
+/*#region text size*/
 .w3-tiny {
     font-size: 10px !important
 }
@@ -902,6 +881,9 @@ a {
 .w3-jumbo {
     font-size: 64px !important
 }
+/*#endregion*/
+
+/*#region text align*/
 
 .w3-left-align {
     text-align: left !important
@@ -918,48 +900,9 @@ a {
 .w3-center {
     text-align: center !important
 }
+/*#endregion*/
 
-.w3-border-0 {
-    border: 0 !important
-}
-
-.w3-border {
-    border: 1px solid #ccc !important;
-    border-radius: 5px;
-}
-
-.w3-border-top {
-    border-top: 1px solid #ccc !important
-}
-
-.w3-border-bottom {
-    border-bottom: 1px solid #ccc !important
-}
-
-.w3-border-left {
-    border-left: 1px solid #ccc !important
-}
-
-.w3-border-right {
-    border-right: 1px solid #ccc !important
-}
-
-.w3-topbar {
-    border-top: 6px solid #ccc !important
-}
-
-.w3-bottombar {
-    border-bottom: 6px solid #ccc !important
-}
-
-.w3-leftbar {
-    border-left: 6px solid #ccc !important
-}
-
-.w3-rightbar {
-    border-right: 6px solid #ccc !important
-}
-
+/*#region margin and padding*/
 .w3-section,
 .w3-code {
     margin-top: 16px !important;
@@ -1039,6 +982,8 @@ a {
     padding-top: 24px !important
 }
 
+/*#endregion*/
+
 .w3-left {
     float: left !important
 }
@@ -1047,12 +992,15 @@ a {
     float: right !important
 }
 
-/*#endregion*/
-
 /*#region background colors*/
-.w3-button:hover {
-    color: #000 !important;
-    background-color: white !important
+.w3-translucent,
+.w3-hover-opacity:hover {
+    opacity: 0.60
+}
+
+.w3-opaque,
+.w3-hover-opaque:hover {
+    opacity: 1
 }
 
 .w3-transparent,
@@ -1193,12 +1141,12 @@ a {
 }
 
 .w3-white,
-.w3-hover-white:hover {
+.w3-hover-hovercolor:hover {
     color: #000 !important;
     background-color: #fff !important
 }
 
-.w3-black,
+.w3-primarycolor,
 .w3-hover-black:hover {
     color: #fff !important;
     background-color: #000 !important
@@ -1396,6 +1344,47 @@ a {
 /*#endregion*/
 
 /*#region borders*/
+.w3-border-0 {
+    border: 0 !important
+}
+
+.w3-border {
+    border: 1px solid #ccc !important;
+    border-radius: 5px;
+}
+
+.w3-border-top {
+    border-top: 1px solid #ccc !important
+}
+
+.w3-border-bottom {
+    border-bottom: 1px solid #ccc !important
+}
+
+.w3-border-left {
+    border-left: 1px solid #ccc !important
+}
+
+.w3-border-right {
+    border-right: 1px solid #ccc !important
+}
+
+.w3-topbar {
+    border-top: 6px solid #ccc !important
+}
+
+.w3-bottombar {
+    border-bottom: 6px solid #ccc !important
+}
+
+.w3-leftbar {
+    border-left: 6px solid #ccc !important
+}
+
+.w3-rightbar {
+    border-right: 6px solid #ccc !important
+}
+
 .w3-border-amber,
 .w3-hover-border-amber:hover {
     border-color: #ffc107 !important
@@ -1556,33 +1545,10 @@ a {
 
 /*#endregion*/
 
-/*#region Section Button */
-.w3-sectionButton {
-    border: 2px solid grey;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.w3-sectionButton>button {
-    width: 100%;
-}
-
-/*#endregion*/
-
 /*#region Collapsible Styles */
 /* note: class '.active' is the universal toggler class */
 
-.collapsibleButton {
-    cursor: pointer;
-    padding: 18px;
-    text-align: left;
-    outline: none;
-    border: none;
-}
-
-
 .content {
-    padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
