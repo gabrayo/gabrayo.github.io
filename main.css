@@ -1271,35 +1271,35 @@ h5 {
 
 .w3-secondarycolor,
 .w3-hover-secondarycolor:hover {
-    color: #000 !important;
-    background-color: #fff !important
+    color: #4d4d4d !important;
+    background-color: #d4d4d4 !important
 }
 
 .w3-midcolor,
 .w3-hover-midcolor:hover {
-    color: #fff !important;
-    background-color: #535353 !important
+    color: #ffffff !important;
+    background-color: #efffcf !important
 }
 
 .w3-primarycolor,
 .w3-hover-primarycolor:hover {
-    color: #fff !important;
-    background-color: #000 !important
+    color: #ffffff !important;
+    background-color: #424242 !important
 }
 
 .w3-text-highcolor,
 .w3-hover-text-highcolor:hover {
-    color: #fff !important
+    color: #ffffff !important
 }
 
 .w3-text-lowcolor,
 .w3-hover-text-lowcolor:hover{
-    color: #757575 !important
+    color: #b5b5b5 !important
 }
 
 .w3-text-midcolor,
-.w3-hover-text-light-grey:hover{
-    color: #f1f1f1 !important
+.w3-hover-text-midcolor:hover{
+    color: #efffcf !important
 }
 
 /*#endregion*/

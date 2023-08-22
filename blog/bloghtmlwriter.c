@@ -192,10 +192,10 @@ int main()
             fprintf(fptr, blogtempsecs[2]);
             fprintf(fptr, blogbody[0]);
             fprintf(fptr, blogtempsecs[3]);
-            fprintf(fptr, blogbody[2]);
+            fprintf(fptr, blogbody[3]);
             fprintf(fptr, blogtempsecs[4]);
 
-            for (int l = 3; l < linecount; l++)
+            for (int l = 4; l < linecount; l++)
             {
                 fprintf(fptr, "<p>");
                 fprintf(fptr, blogbody[l]);
@@ -207,7 +207,7 @@ int main()
             FILE *sResults = fopen(sresultsDir, "a");
 
             fprintf(sResults, blogbuttonsecs[0]);
-            fprintf(sResults, dir);
+            fprintf(sResults, blogbody[2]);
             fprintf(sResults, blogbuttonsecs[1]);
             fprintf(sResults, blogbody[0]);
             fprintf(sResults, blogbuttonsecs[2]);
