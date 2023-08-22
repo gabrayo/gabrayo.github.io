@@ -53,7 +53,7 @@ function UpdateSearchBox(input, quallist) {
                     resultanttext += rawtext.substring(lengthbefore, lengthbefore + splittext[o].length);
                     lengthbefore += splittext[o].length;
 
-                    resultanttext += '<span class="w3-text-white">' + rawtext.substring(lengthbefore, lengthbefore + searchstring.length) + '</span>';
+                    resultanttext += '<span class="w3-text-highcolor">' + rawtext.substring(lengthbefore, lengthbefore + searchstring.length) + '</span>';
                     lengthbefore += searchstring.length;
                 }
             }
@@ -78,11 +78,11 @@ function InjectSkillList(text) {
         var curPercent = lines[i + 1];
 
         elem.innerHTML +=
-            "<p class=\"w3-wide\">" +
+            '<p class="w3-wide">' +
             curLine.trim() +
-            "</p><div class=\"w3-white\"><div style=\"height:28px;width:" +
+            '</p><div class="w3-secondarycolor"><div style="height:28px;width:' +
             curPercent.trim() +
-            "%\"><div class=\"w3-dark-grey dynamicvisibility widthfade\"></div></div></div>"
+            "%\"><div class=\"w3-midcolor dynamicvisibility widthfade\"></div></div></div>"
             ;
     }
 }
@@ -101,7 +101,7 @@ function InjectInvolvements(text) {
 
             newHTML +=
                 '<div class="w3-border w3-primarycolor w3-margin-top">' +
-                '<div class="w3-left-align w3-block w3-padding w3-padding-16 w3-hover-hovercolor collapsibleButton w3-wide dynamicvisibility simplefade">' +
+                '<div class="w3-left-align w3-block w3-padding w3-padding-16 w3-hover-secondarycolor collapsibleButton w3-wide dynamicvisibility simplefade">' +
                 lines[i].substring(3) +
                 '</div>' +
                 '<div class="content">' +
@@ -115,7 +115,7 @@ function InjectInvolvements(text) {
                 '" alt="Avatar"' +
                 'class="w3-left w3-circle w3-margin-right" style="width:80px">' +
                 '<div style="margin-left:100px">' +
-                '<p><span class="w3-large w3-margin-right w3-text-white">' +
+                '<p><span class="w3-large w3-margin-right w3-text-highcolor">' +
                 lines[i + 1].trim() +
                 '</span>' +
                 lines[i + 2].trim() + '</p>' +
@@ -149,10 +149,10 @@ function InjectProjects(text){
     var newHTML = "";
 
     for (i = 0; i < lines.length; i += 6) {
-        newHTML += '<div class="w3-third w3-text-white">';
+        newHTML += '<div class="w3-third w3-text-highcolor">';
         newHTML +=
-                '<div class="w3-border">' +
-                '<div class="w3-left-align w3-block w3-padding w3-padding-16 w3-hover-hovercolor collapsibleButton w3-wide dynamicvisibility simplefade">' +
+                '<div class="w3-border w3-margin-top">' +
+                '<div class="w3-left-align w3-block w3-padding w3-padding-16 w3-hover-secondarycolor collapsibleButton w3-wide dynamicvisibility simplefade">' +
                 "Show Set " + ((i / 6) + 1) +
                 '</div>';
 
