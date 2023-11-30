@@ -4,9 +4,13 @@
     at CCP
         A.Y. 2021-2022 president at Competetive Computer Programmers (CCP). I delivered 2 seminars here about game development. 
     exp_projExp.png
-    4+ years Project Experience 
+    5+ years Project Experience 
     Self-taught
-        10 major projects within 4+ years with 3 active. With some projects delving into specific areas of game development including: Steam multiplayer, Serialization, and Advanced code architecture. Project updates can be found in my <a class="w3-text-highcolor" href="https://twitter.com/exhorizons">game developer twitter account</a>.
+        10 major projects within 5+ years with 3 projects active. With some projects delving into specific areas of game development including: Steam multiplayer, Serialization, and Advanced code architecture. Project updates can be found in my <a class="w3-text-highcolor" href="https://twitter.com/exhorizons">game developer twitter account</a>.
+    exp_education.png
+    Student in a Game Development College program
+    at DLSU
+        Currently studying at De La Salle University. Bachelor of Science in Interactive Entertainment Technologies, Major in Game Development.
 >>>Work Experience
     exp_lscs.png
     DLSU Academics Officer
@@ -16,12 +20,20 @@
     exp_paper.png
     Published Author 
     at DLSU
-        I love publishing research articles.
->>>Front-end Web Development
+        My publications can be found at my <a class="w3-text-highcolor" href="https://scholar.google.com/citations?user=XmADm7UAAAAJ&hl=en&authuser=1">google scholar</a> site.
+>>>Web Development
     exp_website.png
-    Site Creation 
+    Front-End Site Creation 
     commissioned
         Actively developing sites such as <a class="w3-text-highcolor" href="https://github.com/gabrayo/gabrayo.github.io">this</a> portfolio site.
+    exp_website.png
+    Web-App Creation
+    using React and React Native
+        Actively learning using projects made in React for websites, and React Native.
+    exp_website.png
+    Back-end development
+    with sql and php
+        Currently developing an app in react native that connects to a database.
 >>>Music Production
     exp_piano.png
     Classically Trained
