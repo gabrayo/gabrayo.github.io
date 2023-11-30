@@ -1278,13 +1278,13 @@ h5 {
 .w3-midcolor,
 .w3-hover-midcolor:hover {
     color: #ffffff !important;
-    background-color: #efffcf !important
+    background-color: rgb(184, 255, 42) !important
 }
 
 .w3-primarycolor,
 .w3-hover-primarycolor:hover {
     color: #ffffff !important;
-    background-color: #424242 !important
+    background-color: #343434 !important
 }
 
 .w3-text-highcolor,
