@@ -1,8 +1,8 @@
-99
+95
 C#
-60
+55
 Javascript
-42
+35
 Python
-65
+99
 C++

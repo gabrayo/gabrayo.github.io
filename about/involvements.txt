@@ -1,12 +1,16 @@
 >>>Game Development
+    exp_projExp.png
+    7+ years Project Experience 
+    Self-taught
+        10 major projects within 5+ years with 3 projects active. With some projects delving into specific areas of game development including: Steam multiplayer, Serialization, and Advanced code architecture. Project updates can be found in my <a class="w3-text-highcolor" href="https://twitter.com/exhorizons">game developer twitter account</a>.
+    exp_projExp.png
+    Created own game engine. 
+    thesis topic
+        Actively creating my own game engine to suit my personal needs and to further my chosen research topic. Find it <a class="w3-text-highcolor" href="https://github.com/Cybalt-SR/Gab-Engine">here</a>.
     exp_cssClub.jpg
     DLSU Organization President
     at CCP
         A.Y. 2021-2022 president at Competetive Computer Programmers (CCP). I delivered 2 seminars here about game development. 
-    exp_projExp.png
-    5+ years Project Experience 
-    Self-taught
-        10 major projects within 5+ years with 3 projects active. With some projects delving into specific areas of game development including: Steam multiplayer, Serialization, and Advanced code architecture. Project updates can be found in my <a class="w3-text-highcolor" href="https://twitter.com/exhorizons">game developer twitter account</a>.
     exp_education.png
     Student in a Game Development College program
     at DLSU
@@ -19,6 +23,10 @@
 >>>Publications
     exp_paper.png
     Published Author 
+    of a book
+        Wrote and published a book entitled "How to really teach yourself programming." It is available on <a class="w3-text-highcolor" href="https://a.co/d/3e06g4E">Amazon</a>.
+    exp_paper.png
+    Published Researcher 
     at DLSU
         My publications can be found at my <a class="w3-text-highcolor" href="https://scholar.google.com/citations?user=XmADm7UAAAAJ&hl=en&authuser=1">google scholar</a> site.
 >>>Web Development
